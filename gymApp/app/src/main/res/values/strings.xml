@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">gymApp</string>
+    <string name="enter_text">Enter Text</string>
+    <string name="change">Change</string>
+    <string name="cats" />
+    <string name="home" />
+    <string name="calendar" />
+    <string name="editcalendar" />
+    <string name="no_exercises_listed">You have no exercises listed</string>
+    <string name="n_a">N/A</string>
+    <string name="kg">kg</string>
+    <string name="sets">%1$s Sets</string>
+    <string name="reps">%1$s Reps</string>
+    <string name="exercises">Exercises</string>
+</resources>
