@@ -2,6 +2,9 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.0" // <--- ADD THIS (Compatible with Kotlin 1.9.0)
+    //      Check compatibility map if 1.5.3 causes issues,
+    //      1.5.2 is another option for Kotlin 1.9.0.
 }
 
 android {
@@ -22,8 +25,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments ["room.schemaLocation"] =
-                    "$projectDir/schemas".toString()
+                arguments["room.schemaLocation"] = "$projectDir/schemas".toString()
             }
         }
     }
@@ -48,9 +50,9 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.0"
-    }
+    // composeOptions { // <--- REMOVE OR COMMENT OUT THIS ENTIRE BLOCK
+    //     kotlinCompilerExtensionVersion = "1.5.0"
+    // }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -59,6 +61,7 @@ android {
 }
 
 dependencies {
+    // Your dependencies remain the same
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.preference:preference-ktx:1.2.1")
